@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface OWTableViewController : UITableViewController
-
+@property (strong, nonatomic) NSMutableArray *planets;
 @end

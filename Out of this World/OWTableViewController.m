@@ -7,6 +7,8 @@
 //
 
 #import "OWTableViewController.h"
+#import "AstronomicalData.h"
+#import "OWSpaceObject.h"
 
 @interface OWTableViewController ()
 
@@ -32,6 +34,15 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	
+	self.planets = [[NSMutableArray alloc] init];
+	
+	for (NSMutableDictionary *planetData in [AstronomicalData allKnownPlanets])
+	{
+		NSString *imageName = [NSString stringWithFormat:@"%@.jpg", planetData[PLANET_NAME]];
+		OWSpaceObject *planet = [[OWSpaceObject alloc] initWithData:planetData andImage:[UIImage imageNamed:imageName]];
+		[self.planets addObject:planet];
+	}
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,20 +57,14 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 3;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    if (section == 0) {
-		return 2;
-	} else if (section == 1) {
-		return 1;
-	} else {
-		return 3;
-	}
+	return self.planets.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -68,17 +73,14 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
+	OWSpaceObject *planet = [self.planets objectAtIndex:indexPath.row];
+	cell.textLabel.text = planet.name;
+	cell.detailTextLabel.text = planet.nickname;
+	cell.imageView.image = planet.spaceImage;
 	
-	if (indexPath.section == 0) {
-		cell.backgroundColor = [UIColor redColor];
-		cell.textLabel.text = @"I am in section 0";
-	} else if (indexPath.section == 1) {
-		cell.backgroundColor = [UIColor blueColor];
-		cell.textLabel.text = @"another section";
-	} else {
-		cell.backgroundColor = [UIColor yellowColor];
-		cell.textLabel.text = [NSString stringWithFormat:@"Cell %i", indexPath.row];
-	}
+	cell.backgroundColor = [UIColor clearColor];
+	cell.textLabel.textColor = [UIColor whiteColor];
+	cell.detailTextLabel.textColor = [UIColor colorWithWhite:0.5 alpha:1.0];
     
     return cell;
 }
