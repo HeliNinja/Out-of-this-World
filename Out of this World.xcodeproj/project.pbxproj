@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF71817D19E610E1007356F3 /* OWTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF71817C19E610E1007356F3 /* OWTableViewController.m */; };
 		FF90693719C648F700F2BB27 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF90693619C648F700F2BB27 /* Foundation.framework */; };
 		FF90693919C648F700F2BB27 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF90693819C648F700F2BB27 /* CoreGraphics.framework */; };
 		FF90693B19C648F700F2BB27 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF90693A19C648F700F2BB27 /* UIKit.framework */; };
@@ -20,7 +21,6 @@
 		FF90695819C648F700F2BB27 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF90693A19C648F700F2BB27 /* UIKit.framework */; };
 		FF90696019C648F700F2BB27 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF90695E19C648F700F2BB27 /* InfoPlist.strings */; };
 		FF90696219C648F700F2BB27 /* Out_of_this_WorldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF90696119C648F700F2BB27 /* Out_of_this_WorldTests.m */; };
-		FF90696D19C649C600F2BB27 /* OWOuterSpaceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF90696C19C649C600F2BB27 /* OWOuterSpaceTableViewController.m */; };
 		FFCEA7AE19E5BA2B00EC8CE6 /* AstronomicalData.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCEA7AD19E5BA2B00EC8CE6 /* AstronomicalData.m */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FF71817B19E610E1007356F3 /* OWTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWTableViewController.h; sourceTree = "<group>"; };
+		FF71817C19E610E1007356F3 /* OWTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWTableViewController.m; sourceTree = "<group>"; };
 		FF90693319C648F700F2BB27 /* Out of this World.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Out of this World.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF90693619C648F700F2BB27 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FF90693819C648F700F2BB27 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -52,8 +54,6 @@
 		FF90695D19C648F700F2BB27 /* Out of this WorldTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Out of this WorldTests-Info.plist"; sourceTree = "<group>"; };
 		FF90695F19C648F700F2BB27 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FF90696119C648F700F2BB27 /* Out_of_this_WorldTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Out_of_this_WorldTests.m; sourceTree = "<group>"; };
-		FF90696B19C649C600F2BB27 /* OWOuterSpaceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OWOuterSpaceTableViewController.h; path = ../OWOuterSpaceTableViewController.h; sourceTree = "<group>"; };
-		FF90696C19C649C600F2BB27 /* OWOuterSpaceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OWOuterSpaceTableViewController.m; path = ../OWOuterSpaceTableViewController.m; sourceTree = "<group>"; };
 		FFCEA7AC19E5BA2B00EC8CE6 /* AstronomicalData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AstronomicalData.h; sourceTree = "<group>"; };
 		FFCEA7AD19E5BA2B00EC8CE6 /* AstronomicalData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AstronomicalData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,8 +118,8 @@
 				FF90694519C648F700F2BB27 /* OWAppDelegate.h */,
 				FF90694619C648F700F2BB27 /* OWAppDelegate.m */,
 				FF90694819C648F700F2BB27 /* Main.storyboard */,
-				FF90696B19C649C600F2BB27 /* OWOuterSpaceTableViewController.h */,
-				FF90696C19C649C600F2BB27 /* OWOuterSpaceTableViewController.m */,
+				FF71817B19E610E1007356F3 /* OWTableViewController.h */,
+				FF71817C19E610E1007356F3 /* OWTableViewController.m */,
 				FF90694E19C648F700F2BB27 /* Images.xcassets */,
 				FF90693D19C648F700F2BB27 /* Supporting Files */,
 			);
@@ -255,10 +255,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF90696D19C649C600F2BB27 /* OWOuterSpaceTableViewController.m in Sources */,
 				FF90694719C648F700F2BB27 /* OWAppDelegate.m in Sources */,
 				FF90694319C648F700F2BB27 /* main.m in Sources */,
 				FFCEA7AE19E5BA2B00EC8CE6 /* AstronomicalData.m in Sources */,
+				FF71817D19E610E1007356F3 /* OWTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

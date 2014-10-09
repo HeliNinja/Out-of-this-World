@@ -1,18 +1,18 @@
 //
-//  OWOuterSpaceTableViewController.m
+//  OWTableViewController.m
 //  Out of this World
 //
-//  Created by George Grauke on 9/14/14.
+//  Created by George Grauke on 10/8/14.
 //  Copyright (c) 2014 HeliNinja. All rights reserved.
 //
 
-#import "OWOuterSpaceTableViewController.h"
+#import "OWTableViewController.h"
 
-@interface OWOuterSpaceTableViewController ()
+@interface OWTableViewController ()
 
 @end
 
-@implementation OWOuterSpaceTableViewController
+@implementation OWTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -32,42 +32,6 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-	
-	self.planets = [[NSMutableArray alloc] init];
-	
-	NSString *planet1 = @"Mercury";
-	NSString *planet2 = @"Venus";
-	NSString *planet3 = @"Earth";
-	NSString *planet4 = @"Mars";
-	NSString *planet5 = @"Jupiter";
-	NSString *planet6 = @"Saturn";
-	NSString *planet7 = @"Uranus";
-	NSString *planet8 = @"Neptune";
-	
-	[self.planets addObject:planet1];
-	[self.planets addObject:planet2];
-	[self.planets addObject:planet3];
-	[self.planets addObject:planet4];
-	[self.planets addObject:planet5];
-	[self.planets addObject:planet6];
-	[self.planets addObject:planet7];
-	[self.planets addObject:planet8];
-	
-//	NSMutableDictionary *myDictionary = [[NSMutableDictionary alloc] init];
-//	NSString *firstColor = @"red";
-//	[myDictionary setObject:firstColor forKey:@"firetruck color"];
-//	[myDictionary setObject:@"blue" forKey:@"ocean color"];
-//	[myDictionary setObject:@"yellow" forKey:@"star color"];
-//	
-//	NSLog(@"%@", myDictionary);
-//	
-//	NSString *blueString = [myDictionary objectForKey:@"ocean color"];
-//	NSLog(@"%@", blueString);
-	
-	NSNumber *myNumber = [NSNumber numberWithInt:5];
-	NSLog(@"%@", myNumber);
-	NSNumber *floatNumber = [NSNumber numberWithFloat:3.14];
-	NSLog(@"%@", floatNumber);
 }
 
 - (void)didReceiveMemoryWarning
@@ -82,14 +46,20 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-	return [self.planets count];
+    if (section == 0) {
+		return 2;
+	} else if (section == 1) {
+		return 1;
+	} else {
+		return 3;
+	}
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -98,12 +68,16 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-	cell.textLabel.text = [self.planets objectAtIndex:indexPath.row];
 	
 	if (indexPath.section == 0) {
 		cell.backgroundColor = [UIColor redColor];
+		cell.textLabel.text = @"I am in section 0";
+	} else if (indexPath.section == 1) {
+		cell.backgroundColor = [UIColor blueColor];
+		cell.textLabel.text = @"another section";
 	} else {
 		cell.backgroundColor = [UIColor yellowColor];
+		cell.textLabel.text = [NSString stringWithFormat:@"Cell %i", indexPath.row];
 	}
     
     return cell;
